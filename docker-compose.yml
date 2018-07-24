@@ -33,6 +33,7 @@ services:
    image: netflix-hystrix
    links:
     - eureka
+    - rabbitmq
    ports:
     - "8383:8383"
    env_file:
@@ -45,6 +46,7 @@ services:
     - eureka
     - config
     - zipkin
+    - rabbitmq
    ports:
     - "8989:8989"
     - "8990:8990"
@@ -68,6 +70,7 @@ services:
     - eureka
     - config
     - zipkin
+    - rabbitmq
    ports:
     - "8181"
     - "9181"
@@ -81,6 +84,7 @@ services:
     - eureka
     - config
     - zipkin
+    - rabbitmq
    ports:
     - "8180"
     - "9180"
@@ -120,5 +124,12 @@ services:
     - zipkin
    ports:
     - "8083"
+   env_file:
+    - wfd.env
+  rabbitmq:
+   image: rabbitmq:3-management
+   ports:
+    - "5672:5672"
+    - "15672:15672"
    env_file:
     - wfd.env

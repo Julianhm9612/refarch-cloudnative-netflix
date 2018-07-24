@@ -16,7 +16,7 @@ fi
 DEFAULT_BRANCH=${1:-master}
 
 #IBM Cloud Architecture GitHub Repository.
-GITHUB_ORG=${CUSTOM_GITHUB_ORG:-ibm-cloud-architecture}
+GITHUB_ORG=${CUSTOM_GITHUB_ORG:-random-coding}
 echo "Cloning from GitHub Organization or User Account of \"${GITHUB_ORG}\"."
 echo "--> To override this value, run \"export CUSTOM_GITHUB_ORG=your-github-org\" prior to running this script."
 echo "Cloning from repository branch \"${DEFAULT_BRANCH}\"."
